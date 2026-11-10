@@ -59,6 +59,11 @@ export class VoiceModel {
     });
   }
 
+  /** the engine's id for this model (bodies and rates that simulate alike share one) */
+  get id(): number {
+    return this.model.model;
+  }
+
   /** Free the engine's model; this VoiceModel must not be used afterwards. */
   dispose(): void {
     dropAirwayModel(this.model);
